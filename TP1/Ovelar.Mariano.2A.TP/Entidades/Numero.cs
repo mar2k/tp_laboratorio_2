@@ -15,34 +15,40 @@ namespace Entidades
                 this._numero = ValidarNumero(value);
             }
         }
-        public Numero()
+        public Numero() : this("0") { }
+
+        public Numero(double numero) : this(numero.ToString()) { }
+
+        public Numero(string numero)
         {
-            this._numero = 0;
+            if (numero != "")
+            {
+                this._numero = double.Parse(numero);
+            }
         }
 
-
-        private static double ValidarNumero (String strNumero)
+        private static double ValidarNumero(String strNumero)
         {
             double retorno = 0;
             bool flag = true;
 
             foreach (char numero in strNumero)
             {
-                if(!(numero >= '0' && numero <= '9'))
+                if (!(numero >= '0' && numero <= '9'))
                 {
                     flag = false;
                     break;
                 }
             }
-            if(flag)
+            if (flag)
             {
-                if(strNumero=="")
+                if (strNumero == "")
                 {
                     strNumero = "0";
                 }
                 retorno = double.Parse(strNumero);
             }
-            
+
             return retorno;
         }
 
@@ -70,10 +76,10 @@ namespace Entidades
         {
             String cadena = "";
             String aux = x.ToString();
-            int numero =int.Parse(aux);
+            int numero = int.Parse(aux);
             if (numero > 0)
             {
-                
+
                 while (numero > 0)
                 {
                     if (numero % 2 == 0)
@@ -99,19 +105,19 @@ namespace Entidades
 
         public static String BinarioDecimal(String binario)
         {
-            String retorno="Valor inválido";
+            String retorno = "Valor inválido";
             char[] array = binario.ToCharArray();
             bool flag = true;
 
-            for(int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                if(array[i] != '1' && array[i] != '0')
+                if (array[i] != '1' && array[i] != '0')
                 {
                     flag = false;
                     break;
                 }
             }
-            if(flag)
+            if (flag)
             {
                 Array.Reverse(array);
                 double sum = 0;
@@ -139,11 +145,11 @@ namespace Entidades
         public static double operator /(Numero n1, Numero n2)
         {
             double retorno = 0;
-            if(n2._numero!=0)
+            if (n2._numero != 0)
             {
-                retorno=n1._numero / n2._numero;
+                retorno = n1._numero / n2._numero;
             }
-            return retorno; 
+            return retorno;
         }
         public static double operator *(Numero n1, Numero n2)
         {

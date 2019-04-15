@@ -13,64 +13,48 @@ namespace MiCalculadora
 {
     public partial class LaCalculadora : Form
     {
-        Numero num1=new Numero();
-        Numero num2=new Numero();
-        
         public LaCalculadora()
         {
             InitializeComponent();
-            this.comOperador.SelectedIndex = 0;
-            this.comOperador.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.cmbOperador.SelectedIndex = 0;
+            this.cmbOperador.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void ComvertirADecimal_Click(object sender, EventArgs e)
+        private void btnComvertirADecimal_Click(object sender, EventArgs e)
         {
             lblResultado.Text = Numero.BinarioDecimal(lblResultado.Text);
         }
 
-        private void ComvertirABinario_Click(object sender, EventArgs e)
+        private void btnComvertirABinario_Click(object sender, EventArgs e)
         {
             lblResultado.Text = Numero.DecimalBinario(lblResultado.Text);
         }
 
-        private void Operar_Click(object sender, EventArgs e)
+        private void btnOperar_Click(object sender, EventArgs e)
         {
-            double resultado;
-
-            num1.SetNumero = txtNumero1.Text;
-            num2.SetNumero = txtNumero2.Text;
-            
-            resultado = Calculadora.Operar(num1,num2,comOperador.Text);
-
-            lblResultado.Text = resultado.ToString();
-
+            lblResultado.Text = LaCalculadora.Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
         }
 
-        private void Limpiar_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            lblResultado.Text = "0";
-            txtNumero1.Text = "";
-            txtNumero2.Text = "";
+            this.Limpiar();
         }
 
-        private void Cerrar_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void lblResultado_Click(object sender, EventArgs e)
+        private static double Operar(string numero1, string numero2, string operador)
         {
-
+            return Calculadora.Operar(new Numero(numero1), new Numero(numero2), operador);
         }
 
-        private void comOperador_SelectedIndexChanged(object sender, EventArgs e)
+        private void Limpiar()
         {
-
+            lblResultado.Text = "0";
+            txtNumero1.Text = "";
+            txtNumero2.Text = "";
         }
     }
 }

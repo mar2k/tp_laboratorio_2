@@ -182,11 +182,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USER\\Desktop\\TP_AUX\\TP1\\Ovelar.Mariano.2A.TP\\Entidades\\Entidades.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\Desktop\\UTN\\tp_laboratorio_2\\TP1\\Ovelar.Mariano.2A.TP\\Entidades\\Entidades.csproj",
       "projectName": "Entidades",
-      "projectPath": "C:\\Users\\USER\\Desktop\\TP_AUX\\TP1\\Ovelar.Mariano.2A.TP\\Entidades\\Entidades.csproj",
+      "projectPath": "C:\\Users\\USER\\Desktop\\UTN\\tp_laboratorio_2\\TP1\\Ovelar.Mariano.2A.TP\\Entidades\\Entidades.csproj",
       "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USER\\Desktop\\TP_AUX\\TP1\\Ovelar.Mariano.2A.TP\\Entidades\\obj\\",
+      "outputPath": "C:\\Users\\USER\\Desktop\\UTN\\tp_laboratorio_2\\TP1\\Ovelar.Mariano.2A.TP\\Entidades\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
